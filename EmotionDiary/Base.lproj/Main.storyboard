@@ -167,24 +167,24 @@
                     </view>
                     <navigationItem key="navigationItem" id="Eck-aX-gee"/>
                     <connections>
-                        <outlet property="button1" destination="Yj3-oh-fKA" id="hMN-hC-Pw8"/>
-                        <outlet property="button2" destination="2jI-jg-vOm" id="mWB-1l-B5M"/>
-                        <outlet property="button3" destination="2xM-je-9Sa" id="uWU-fE-6F5"/>
-                        <outlet property="button4" destination="Qy9-61-nRu" id="4fT-e5-ceo"/>
-                        <outlet property="button5" destination="9Mz-r4-wMX" id="RVT-Vu-Dex"/>
-                        <outlet property="button6" destination="cAq-Mt-i51" id="UQp-9V-4Lz"/>
-                        <outlet property="button7" destination="3D1-OX-d6S" id="vrg-59-QLy"/>
-                        <outlet property="button8" destination="ruV-Jd-Tkd" id="gd2-cN-nlB"/>
-                        <outlet property="button9" destination="z5p-zE-IZY" id="yzD-m9-hIa"/>
-                        <outlet property="label1" destination="zx2-S6-dBn" id="2es-hJ-ILu"/>
-                        <outlet property="label2" destination="qIM-bg-jli" id="fM9-3w-ZEG"/>
-                        <outlet property="label3" destination="mlq-aQ-Gs5" id="i6y-X8-wov"/>
-                        <outlet property="label4" destination="KmP-hV-z2s" id="eSo-4V-XFl"/>
-                        <outlet property="label5" destination="8MN-Xc-rWe" id="pgQ-d8-Lxf"/>
-                        <outlet property="label6" destination="d5d-mK-BGg" id="VYT-Xr-7oT"/>
-                        <outlet property="label7" destination="hGI-hs-kNA" id="8Nn-5n-6Zo"/>
-                        <outlet property="label8" destination="Wub-H1-9bJ" id="q0U-2X-jdU"/>
-                        <outlet property="label9" destination="NSo-CW-mAl" id="4iZ-yQ-biP"/>
+                        <outlet property="anxiousButton" destination="ruV-Jd-Tkd" id="52q-2j-aTf"/>
+                        <outlet property="anxiousLabel" destination="Wub-H1-9bJ" id="hll-GN-uBK"/>
+                        <outlet property="boredButton" destination="3D1-OX-d6S" id="Zfr-nd-DcG"/>
+                        <outlet property="boredLabel" destination="hGI-hs-kNA" id="ekY-KY-733"/>
+                        <outlet property="depressedButton" destination="cAq-Mt-i51" id="heZ-os-BZG"/>
+                        <outlet property="depressedLabel" destination="d5d-mK-BGg" id="diS-gd-daM"/>
+                        <outlet property="embarrassedButton" destination="Qy9-61-nRu" id="r8N-XF-x6K"/>
+                        <outlet property="embarrassedLabel" destination="KmP-hV-z2s" id="Re6-qq-AcS"/>
+                        <outlet property="frustratedButton" destination="z5p-zE-IZY" id="Mfu-34-Iel"/>
+                        <outlet property="frustratedLabel" destination="NSo-CW-mAl" id="Oxa-hB-IJT"/>
+                        <outlet property="happyButton" destination="Yj3-oh-fKA" id="sM3-bV-sSn"/>
+                        <outlet property="happyLabel" destination="zx2-S6-dBn" id="bf7-mr-L6J"/>
+                        <outlet property="likeButton" destination="2xM-je-9Sa" id="M4n-FC-RgG"/>
+                        <outlet property="likeLabel" destination="mlq-aQ-Gs5" id="rdr-bh-Nby"/>
+                        <outlet property="loveButton" destination="2jI-jg-vOm" id="CUk-cW-EDN"/>
+                        <outlet property="loveLabel" destination="qIM-bg-jli" id="l3J-08-vYU"/>
+                        <outlet property="upsetButton" destination="9Mz-r4-wMX" id="dZ4-yX-5wA"/>
+                        <outlet property="upsetLabel" destination="8MN-Xc-rWe" id="Ivi-DC-3zw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
