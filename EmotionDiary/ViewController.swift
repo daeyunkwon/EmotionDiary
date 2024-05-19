@@ -110,7 +110,7 @@ final class ViewController: UIViewController {
         
         updateLabelCount(labelName: labelName)
         
-        guard var count = labelCount[labelName] else {return}
+        guard let count = labelCount[labelName] else {return}
         
         var text = emotionTexts[index]
         text += String(count)
