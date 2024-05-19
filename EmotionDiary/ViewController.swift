@@ -54,7 +54,7 @@ final class ViewController: UIViewController {
         self.title = "감정 다이어리"
         
         let listBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: #selector(listBarButtonTapped))
-        listBarButtonItem.tintColor = .black
+        listBarButtonItem.tintColor = .label
         self.navigationItem.leftBarButtonItem = listBarButtonItem
     }
     
