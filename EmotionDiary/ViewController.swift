@@ -11,6 +11,8 @@ final class ViewController: UIViewController {
     
     //MARK: - Properties
     
+    @IBOutlet var backImageView: UIImageView!
+    
     @IBOutlet var happyButton: UIButton!
     @IBOutlet var loveButton: UIButton!
     @IBOutlet var likeButton: UIButton!
@@ -50,9 +52,15 @@ final class ViewController: UIViewController {
     //MARK: - Configurations
     
     func configureUI() {
+        setupUIImageView()
         setupNavi()
         setupUIButton()
         setupUILabel()
+    }
+    
+    func setupUIImageView() {
+        backImageView.image = UIImage(named: "background")
+        backImageView.contentMode = .scaleAspectFill
     }
     
     func setupNavi() {
