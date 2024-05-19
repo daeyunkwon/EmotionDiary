@@ -44,11 +44,16 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavi()
         configureUI()
     }
     
     //MARK: - Configurations
+    
+    func configureUI() {
+        setupNavi()
+        setupUIButton()
+        setupUILabel()
+    }
     
     func setupNavi() {
         self.title = "감정 다이어리"
@@ -58,7 +63,7 @@ final class ViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = listBarButtonItem
     }
     
-    func configureUI() {
+    func setupUIButton() {
         configureEmotionButton(happyButton, imageName: "slime1")
         configureEmotionButton(loveButton, imageName: "slime2")
         configureEmotionButton(likeButton, imageName: "slime3")
@@ -68,7 +73,9 @@ final class ViewController: UIViewController {
         configureEmotionButton(boredButton, imageName: "slime7")
         configureEmotionButton(anxiousButton, imageName: "slime8")
         configureEmotionButton(frustratedButton, imageName: "slime9")
-        
+    }
+    
+    func setupUILabel() {
         configureLabel(happyLabel, index: 0, labelName: "happyLabel")
         configureLabel(loveLabel, index: 1, labelName: "loveLabel")
         configureLabel(likeLabel, index: 2, labelName: "likeLabel")
