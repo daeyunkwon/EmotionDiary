@@ -111,13 +111,6 @@ final class ViewController: UIViewController {
         print(#function)
     }
     
-    func updateLabelCount(labelName: String) {
-        guard var count = labelCount[labelName] else {return}
-        
-        count += 1
-        labelCount[labelName] = count
-    }
-    
     func updateLabelText(index: Int) {
         let label = labels[index]
         
@@ -130,6 +123,13 @@ final class ViewController: UIViewController {
         var text = emotionTexts[index]
         text += String(count)
         label.text = text
+    }
+    
+    func updateLabelCount(labelName: String) {
+        guard var count = labelCount[labelName] else {return}
+        
+        count += 1
+        labelCount[labelName] = count
     }
     
     @IBAction func emotinButtonTapped(_ sender: UIButton) {
