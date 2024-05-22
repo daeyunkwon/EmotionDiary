@@ -46,6 +46,7 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchCount()
         configureUI()
     }
     
@@ -107,6 +108,16 @@ final class ViewController: UIViewController {
     
     //MARK: - Functions
     
+    func fetchCount() {
+        guard let dict = UserDefaults.standard.dictionary(forKey: "count") as? [String: Int] else {return}
+        
+        labelCount = dict
+    }
+    
+    func saveCount() {
+        UserDefaults.standard.setValue(labelCount, forKey: "count")
+    }
+    
     @objc func listBarButtonTapped() {
         print(#function)
     }
@@ -130,6 +141,8 @@ final class ViewController: UIViewController {
         
         count += 1
         labelCount[labelName] = count
+        
+        saveCount()
     }
     
     @IBAction func emotinButtonTapped(_ sender: UIButton) {
