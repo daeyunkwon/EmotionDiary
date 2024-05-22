@@ -160,16 +160,19 @@ final class ViewController: UIViewController {
     }
     
     @objc func resetButtonTapped() {
-        UserDefaults.standard.removeObject(forKey: "count")
-        
         showResetAlert()
         
         fetchCount()
     }
     
     func showResetAlert() {
-        let alert = UIAlertController(title: "알림", message: "초기화 되었습니다.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "확인", style: .default))
+        let alert = UIAlertController(title: "알림", message: "횟수를 초기화 하시겠어요?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "삭제", style: .destructive, handler: { okAction in
+            UserDefaults.standard.removeObject(forKey: "count")
+        }))
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel))
+                        
         self.present(alert, animated: true)
     }
 }
