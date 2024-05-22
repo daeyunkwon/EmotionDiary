@@ -70,6 +70,10 @@ final class ViewController: UIViewController {
         let listBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: #selector(listBarButtonTapped))
         listBarButtonItem.tintColor = .label
         self.navigationItem.leftBarButtonItem = listBarButtonItem
+        
+        let resetButton = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(resetButtonTapped))
+        resetButton.tintColor = .systemPink
+        self.navigationItem.rightBarButtonItem = resetButton
     }
     
     func setupUIButton() {
@@ -109,7 +113,13 @@ final class ViewController: UIViewController {
     //MARK: - Functions
     
     func fetchCount() {
-        guard let dict = UserDefaults.standard.dictionary(forKey: "count") as? [String: Int] else {return}
+        guard let dict = UserDefaults.standard.dictionary(forKey: "count") as? [String: Int] else {
+            for key in labelCount.keys{
+                labelCount[key] = 0
+            }
+            setupUILabel()
+            return
+        }
         
         labelCount = dict
     }
@@ -147,6 +157,20 @@ final class ViewController: UIViewController {
     
     @IBAction func emotinButtonTapped(_ sender: UIButton) {
         updateLabelText(index: sender.tag)
+    }
+    
+    @objc func resetButtonTapped() {
+        UserDefaults.standard.removeObject(forKey: "count")
+        
+        showResetAlert()
+        
+        fetchCount()
+    }
+    
+    func showResetAlert() {
+        let alert = UIAlertController(title: "알림", message: "초기화 되었습니다.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "확인", style: .default))
+        self.present(alert, animated: true)
     }
 }
 
