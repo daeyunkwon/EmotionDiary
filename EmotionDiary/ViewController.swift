@@ -161,8 +161,6 @@ final class ViewController: UIViewController {
     
     @objc func resetButtonTapped() {
         showResetAlert()
-        
-        fetchCount()
     }
     
     func showResetAlert() {
@@ -170,6 +168,7 @@ final class ViewController: UIViewController {
         
         alert.addAction(UIAlertAction(title: "삭제", style: .destructive, handler: { okAction in
             UserDefaults.standard.removeObject(forKey: "count")
+            self.fetchCount()
         }))
         alert.addAction(UIAlertAction(title: "취소", style: .cancel))
                         
