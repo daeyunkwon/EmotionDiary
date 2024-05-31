@@ -58,14 +58,11 @@
 		4419DFF82BF747F400C4AD31 /* EmotionDiary */ = {
 			isa = PBXGroup;
 			children = (
+				44DDCA572C09ADD300BE44A9 /* Application */,
 				445814882C092FB200604BAE /* Utils */,
-				4419DFF92BF747F400C4AD31 /* AppDelegate.swift */,
-				4419DFFB2BF747F400C4AD31 /* SceneDelegate.swift */,
 				4419DFFD2BF747F400C4AD31 /* ViewController.swift */,
 				4419DFFF2BF747F400C4AD31 /* Main.storyboard */,
-				4419E0022BF747F500C4AD31 /* Assets.xcassets */,
-				4419E0042BF747F500C4AD31 /* LaunchScreen.storyboard */,
-				4419E0072BF747F500C4AD31 /* Info.plist */,
+				44DDCA582C09AE1F00BE44A9 /* Resources */,
 			);
 			path = EmotionDiary;
 			sourceTree = "<group>";
@@ -76,6 +73,25 @@
 				4458148A2C09414B00604BAE /* UserDefaultsManager.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		44DDCA572C09ADD300BE44A9 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				4419DFF92BF747F400C4AD31 /* AppDelegate.swift */,
+				4419DFFB2BF747F400C4AD31 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		44DDCA582C09AE1F00BE44A9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4419E0022BF747F500C4AD31 /* Assets.xcassets */,
+				4419E0042BF747F500C4AD31 /* LaunchScreen.storyboard */,
+				4419E0072BF747F500C4AD31 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,7 +322,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9M37U587ZT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EmotionDiary/Info.plist;
+				INFOPLIST_FILE = EmotionDiary/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -339,7 +355,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9M37U587ZT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EmotionDiary/Info.plist;
+				INFOPLIST_FILE = EmotionDiary/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
