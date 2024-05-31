@@ -41,7 +41,6 @@ final class ViewController: UIViewController {
     
     var labelCount: [String: Int] = ["happyLabel": 0, "loveLabel": 0, "likeLabel": 0, "embarrassedLabel": 0, "upsetLabel": 0, "depressedLabel": 0, "boredLabel": 0, "anxiousLabel": 0, "frustratedLabel": 0]
     
-    
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -113,7 +112,7 @@ final class ViewController: UIViewController {
     //MARK: - Functions
     
     func fetchCount() {
-        guard let dict = UserDefaults.standard.dictionary(forKey: "count") as? [String: Int] else {
+        guard let dict = UserDefaultsManager.countData else {
             for key in labelCount.keys{
                 labelCount[key] = 0
             }
@@ -125,11 +124,11 @@ final class ViewController: UIViewController {
     }
     
     func saveCount() {
-        UserDefaults.standard.setValue(labelCount, forKey: "count")
+        UserDefaultsManager.countData = labelCount
     }
     
-    @objc func listBarButtonTapped() {
-        print(#function)
+    @IBAction func emotinButtonTapped(_ sender: UIButton) {
+        updateLabelText(index: sender.tag)
     }
     
     func updateLabelText(index: Int) {
@@ -155,10 +154,6 @@ final class ViewController: UIViewController {
         saveCount()
     }
     
-    @IBAction func emotinButtonTapped(_ sender: UIButton) {
-        updateLabelText(index: sender.tag)
-    }
-    
     @objc func resetButtonTapped() {
         showResetAlert()
     }
@@ -167,12 +162,24 @@ final class ViewController: UIViewController {
         let alert = UIAlertController(title: "알림", message: "횟수를 초기화 하시겠어요?", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "삭제", style: .destructive, handler: { okAction in
-            UserDefaults.standard.removeObject(forKey: "count")
-            self.fetchCount()
+            UserDefaultsManager.removeCountData {
+                self.showResetCompleteAlert()
+                self.fetchCount()
+            }
         }))
         alert.addAction(UIAlertAction(title: "취소", style: .cancel))
                         
         self.present(alert, animated: true)
+    }
+    
+    func showResetCompleteAlert() {
+        let alert = UIAlertController(title: "알림", message: "횟수가 초기화 되었습니다.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "확인", style: .default))
+        present(alert, animated: true)
+    }
+    
+    @objc func listBarButtonTapped() {
+        print(#function)
     }
 }
 
